@@ -16,7 +16,9 @@
       },
       id: {
         type: String,
-        default: ''
+        default: () => {
+          return  'toggle-' + Math.random().toString(36).substr(2, 9);
+        }
       },
       label: {
         type: String,
@@ -38,6 +40,7 @@
   .toggle {
     border: 2px solid black;
     border-radius: 12px;
+    cursor: pointer;
     display: inline-block;
     height: 16px;
     position: relative;
